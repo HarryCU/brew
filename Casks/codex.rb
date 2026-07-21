@@ -2,11 +2,11 @@ cask "codex" do
   arch arm: "aarch64", intel: "x86_64"
   os macos: "apple-darwin", linux: "unknown-linux-musl"
 
-  version "0.142.3"
-  sha256 arm:          "c30315cb41d66d000fc9ad66735f4288d9ff0c7fe748f68f71abad702d72f832",
-         intel:        "b376494327fbb0d3c93dd752f3e73a1c221a4504bbfe345a8420bdf8f0bd3f4a",
-         arm64_linux:  "d4bb18793cd53902593ddb92c409f262c05dc80e4235f865ede2378ba15a1dd1",
-         x86_64_linux: "f96813f41692b4d8ae44d0812165a2fcc429196eb3481f6bc221afdec96a17f8"
+  version "0.144.5"
+  sha256 arm:          "a5b77d2fb393f201777809425ab28d9beb65ee0c0b2bf792f09eaf8ef1151592",
+         intel:        "ff5c894a9ffa6d97c225c8d3c869c7ef7573dcbd0cf9b762ecfb9fa96dbb7d88",
+         arm64_linux:  "5433789cd66e0db3b78cccd218d894471ed9e92fe93465120d1356508952084d",
+         x86_64_linux: "b6bea13bedf493232f6717714c45e783788c695cedcf37c344f73afc97b1ec9f"
 
   url "https://github.com/openai/codex/releases/download/rust-v#{version}/codex-#{arch}-#{os}.tar.gz"
   name "Codex"
@@ -15,7 +15,7 @@ cask "codex" do
 
   livecheck do
     url :url
-    regex(/^rust-v?(\d+(?:\.\d+)+)$/i)
+    regex(/^rust[._-]v?(\d+(?:\.\d+)+)$/i)
     strategy :github_latest
   end
 
